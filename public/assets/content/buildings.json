@@ -1,0 +1,1226 @@
+{
+  "buildings": [
+    {
+      "id": "training_ground",
+      "name": "练武场",
+      "category": "training",
+      "description": "弟子修炼体魄的基础场所",
+      "size": {
+        "w": 2,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 100
+      },
+      "maxLevel": 3,
+      "upgrades": [
+        {
+          "toLevel": 2,
+          "cost": {
+            "currency": {
+              "silver": 200
+            },
+            "inventories": {}
+          },
+          "duration": 2,
+          "requirements": {
+            "reputation": 50
+          },
+          "duringUpgrade": {
+            "outputMultiplier": 0.5
+          }
+        },
+        {
+          "toLevel": 3,
+          "cost": {
+            "currency": {
+              "silver": 400
+            },
+            "inventories": {
+              "herbs": 20
+            }
+          },
+          "duration": 3,
+          "requirements": {
+            "reputation": 150,
+            "discipleMinRealm": "qi_sense"
+          },
+          "duringUpgrade": {
+            "outputMultiplier": 0.3
+          }
+        }
+      ],
+      "levelEffects": {
+        "1": {
+          "outputMultiplier": 1.0,
+          "capacityBonus": 0,
+          "trainingSpeed": 1.0
+        },
+        "2": {
+          "outputMultiplier": 1.3,
+          "capacityBonus": 1,
+          "trainingSpeed": 1.3
+        },
+        "3": {
+          "outputMultiplier": 1.6,
+          "capacityBonus": 2,
+          "trainingSpeed": 1.6,
+          "features": [
+            "bonus_training"
+          ]
+        }
+      },
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "physique",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -10,
+              "reason": "练武场维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 200
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "physique",
+              "delta": 8
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -15,
+              "reason": "练武场维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 400
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 4,
+          "effectsStatic": [
+            {
+              "type": "morale_delta",
+              "delta": 2,
+              "reason": "练武场鼓舞士气"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "physique",
+              "delta": 12
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -20,
+              "reason": "练武场维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scripture_library",
+      "name": "藏经阁",
+      "category": "training",
+      "description": "研读武学秘籍，提升悟性",
+      "size": {
+        "w": 2,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 150
+      },
+      "maxLevel": 3,
+      "upgrades": [
+        {
+          "toLevel": 2,
+          "cost": {
+            "currency": {
+              "silver": 250
+            },
+            "inventories": {}
+          },
+          "duration": 2,
+          "requirements": {
+            "reputation": 80
+          },
+          "duringUpgrade": {
+            "outputMultiplier": 0.5
+          }
+        },
+        {
+          "toLevel": 3,
+          "cost": {
+            "currency": {
+              "silver": 500
+            },
+            "inventories": {
+              "herbs": 30
+            }
+          },
+          "duration": 4,
+          "requirements": {
+            "reputation": 200,
+            "discipleMinRealm": "qi_sense"
+          },
+          "duringUpgrade": {
+            "outputMultiplier": 0.3
+          }
+        }
+      ],
+      "levelEffects": {
+        "1": {
+          "outputMultiplier": 1.0,
+          "capacityBonus": 0,
+          "trainingSpeed": 1.0
+        },
+        "2": {
+          "outputMultiplier": 1.3,
+          "capacityBonus": 1,
+          "trainingSpeed": 1.3
+        },
+        "3": {
+          "outputMultiplier": 1.6,
+          "capacityBonus": 2,
+          "trainingSpeed": 1.6,
+          "features": [
+            "auto_assign"
+          ]
+        }
+      },
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "comprehension",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -12,
+              "reason": "藏经阁维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 250
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "comprehension",
+              "delta": 8
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -18,
+              "reason": "藏经阁维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 500
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 4,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 1,
+              "reason": "藏经阁声名远播"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "comprehension",
+              "delta": 12
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -25,
+              "reason": "藏经阁维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alchemy_lab",
+      "name": "丹房",
+      "category": "production",
+      "description": "炼制丹药，回复伤病",
+      "size": {
+        "w": 1,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 80
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "medicine",
+              "delta": 2,
+              "reason": "丹房产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "alchemy",
+              "delta": 3
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -8,
+              "reason": "丹房维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 150
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "medicine",
+              "delta": 4,
+              "reason": "丹房产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "alchemy",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -12,
+              "reason": "丹房维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 300
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "medicine",
+              "delta": 7,
+              "reason": "丹房产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "alchemy",
+              "delta": 8
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -18,
+              "reason": "丹房维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blacksmith",
+      "name": "铁匠铺",
+      "category": "production",
+      "description": "打造兵器与护具",
+      "size": {
+        "w": 2,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 120
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "weapons",
+              "delta": 1,
+              "reason": "铁匠铺产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "stat_delta",
+              "statId": "physique",
+              "delta": 2
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -10,
+              "reason": "铁匠铺维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 200
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "weapons",
+              "delta": 2,
+              "reason": "铁匠铺产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "stat_delta",
+              "statId": "physique",
+              "delta": 3
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -15,
+              "reason": "铁匠铺维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 400
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "weapons",
+              "delta": 3,
+              "reason": "铁匠铺产出"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "stat_delta",
+              "statId": "physique",
+              "delta": 4
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -20,
+              "reason": "铁匠铺维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dining_hall",
+      "name": "膳堂",
+      "category": "support",
+      "description": "供给饮食，提升士气",
+      "size": {
+        "w": 2,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 80
+      },
+      "maxLevel": 2,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [
+            {
+              "type": "morale_delta",
+              "delta": 3,
+              "reason": "膳堂伙食"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -15,
+              "reason": "膳堂维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 150
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [
+            {
+              "type": "morale_delta",
+              "delta": 5,
+              "reason": "膳堂伙食"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -25,
+              "reason": "膳堂维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guest_house",
+      "name": "客栈",
+      "category": "support",
+      "description": "接待来访宾客，提升门派名望",
+      "size": {
+        "w": 2,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 100
+      },
+      "maxLevel": 2,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 2,
+              "reason": "客栈声望"
+            }
+          ],
+          "productionFlat": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": 10,
+              "reason": "客栈收入"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "charisma",
+              "delta": 3
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -8,
+              "reason": "客栈维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 180
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 4,
+              "reason": "客栈声望"
+            }
+          ],
+          "productionFlat": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": 20,
+              "reason": "客栈收入"
+            }
+          ],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "charisma",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -15,
+              "reason": "客栈维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "herb_garden",
+      "name": "药圃",
+      "category": "production",
+      "description": "种植药草，供丹房使用",
+      "size": {
+        "w": 1,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 60
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "herbs",
+              "delta": 3,
+              "reason": "药圃产出"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -5,
+              "reason": "药圃维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 100
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "herbs",
+              "delta": 5,
+              "reason": "药圃产出"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -8,
+              "reason": "药圃维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 200
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "inventory_delta",
+              "key": "herbs",
+              "delta": 8,
+              "reason": "药圃产出"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -12,
+              "reason": "药圃维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meditation_chamber",
+      "name": "静修室",
+      "category": "training",
+      "description": "静心修炼，磨砺心志",
+      "size": {
+        "w": 1,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 70
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "willpower",
+              "delta": 6
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -5,
+              "reason": "静修室维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 120
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "willpower",
+              "delta": 10
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -8,
+              "reason": "静修室维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 250
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 3,
+          "effectsStatic": [
+            {
+              "type": "morale_delta",
+              "delta": 1,
+              "reason": "静修室安宁"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "willpower",
+              "delta": 15
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -12,
+              "reason": "静修室维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "martial_hall",
+      "name": "演武堂",
+      "category": "training",
+      "description": "操练身法，提升敏捷",
+      "size": {
+        "w": 2,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 130
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 2,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "agility",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -10,
+              "reason": "演武堂维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 220
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 3,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "agility",
+              "delta": 8
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -15,
+              "reason": "演武堂维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 450
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 4,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 1,
+              "reason": "演武堂名声"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "agility",
+              "delta": 12
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -20,
+              "reason": "演武堂维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assembly_hall",
+      "name": "聚贤厅",
+      "category": "support",
+      "description": "会见江湖群豪，提升气质与名望",
+      "size": {
+        "w": 3,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 200
+      },
+      "maxLevel": 2,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 2,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 3,
+              "reason": "聚贤厅声望"
+            },
+            {
+              "type": "morale_delta",
+              "delta": 2,
+              "reason": "聚贤厅氛围"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "charisma",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -20,
+              "reason": "聚贤厅维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 400
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 3,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 5,
+              "reason": "聚贤厅声望"
+            },
+            {
+              "type": "morale_delta",
+              "delta": 3,
+              "reason": "聚贤厅氛围"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "charisma",
+              "delta": 8
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -35,
+              "reason": "聚贤厅维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sect_gate",
+      "name": "山门",
+      "category": "support",
+      "description": "门派正门，彰显威严",
+      "size": {
+        "w": 3,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 150
+      },
+      "maxLevel": 2,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 0,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 3,
+              "reason": "山门威仪"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -5,
+              "reason": "山门维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 300
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 0,
+          "effectsStatic": [
+            {
+              "type": "reputation_delta",
+              "delta": 6,
+              "reason": "山门威仪"
+            },
+            {
+              "type": "morale_delta",
+              "delta": 2,
+              "reason": "山门鼓舞"
+            }
+          ],
+          "productionFlat": [],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -10,
+              "reason": "山门维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treasure_vault",
+      "name": "藏宝阁",
+      "category": "production",
+      "description": "存放门派财物，产生收益",
+      "size": {
+        "w": 1,
+        "h": 1
+      },
+      "buildCost": {
+        "silver": 200
+      },
+      "maxLevel": 3,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": 15,
+              "reason": "藏宝阁收益"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -5,
+              "reason": "藏宝阁维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 350
+          }
+        },
+        {
+          "level": 2,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": 30,
+              "reason": "藏宝阁收益"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -8,
+              "reason": "藏宝阁维护"
+            }
+          ],
+          "upgradeCost": {
+            "silver": 600
+          }
+        },
+        {
+          "level": 3,
+          "workSlots": 1,
+          "effectsStatic": [],
+          "productionFlat": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": 50,
+              "reason": "藏宝阁收益"
+            }
+          ],
+          "workerEffects": [],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -12,
+              "reason": "藏宝阁维护"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced_hall",
+      "name": "高级讲武堂",
+      "category": "cultivation",
+      "description": "装备精良的高级武学传授殿堂，可大幅提升弟子武学修炼速度",
+      "lockedByDefault": true,
+      "size": {
+        "w": 2,
+        "h": 2
+      },
+      "buildCost": {
+        "silver": 500,
+        "wood": 80,
+        "stone": 60
+      },
+      "maxLevel": 2,
+      "levels": [
+        {
+          "level": 1,
+          "workSlots": 4,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "martial",
+              "delta": 3
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -30
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "workSlots": 6,
+          "effectsStatic": [],
+          "productionFlat": [],
+          "workerEffects": [
+            {
+              "effectType": "training",
+              "track": "martial",
+              "delta": 5
+            }
+          ],
+          "upkeep": [
+            {
+              "type": "currency_delta",
+              "key": "silver",
+              "delta": -50
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

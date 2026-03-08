@@ -1,0 +1,87 @@
+{
+  "chapters": [
+    {
+      "id": "story.ch1",
+      "title": "破败山门",
+      "monthRange": { "start": 1, "end": 6 },
+      "objectives": [
+        {
+          "id": "obj.ch1_recruit_5",
+          "text": "招募5名弟子",
+          "target": 5
+        }
+      ],
+      "unlocks": [
+        { "type": "system", "id": "mission_dispatch", "name": "任务派遣" }
+      ],
+      "keyEvents": []
+    },
+    {
+      "id": "story.ch2",
+      "title": "初入江湖",
+      "monthRange": { "start": 7, "end": 18 },
+      "objectives": [
+        {
+          "id": "obj.ch2_reputation_300",
+          "text": "名望达到300",
+          "target": 300
+        }
+      ],
+      "unlocks": [
+        { "type": "building", "id": "advanced_hall", "name": "高级讲武堂" },
+        { "type": "martial", "id": "basic_swordsmanship", "name": "基础剑法" }
+      ],
+      "keyEvents": []
+    },
+    {
+      "id": "story.ch3",
+      "title": "风云际会",
+      "monthRange": { "start": 19, "end": 30 },
+      "objectives": [
+        {
+          "id": "obj.ch3_master_disciple",
+          "text": "培养一名宗师弟子（任意属性≥80）",
+          "target": 1
+        }
+      ],
+      "unlocks": [
+        { "type": "system", "id": "tournament_prep", "name": "大会备战系统" }
+      ],
+      "keyEvents": []
+    },
+    {
+      "id": "story.ch4",
+      "title": "群雄逐鹿",
+      "monthRange": { "start": 31, "end": 36 },
+      "objectives": [
+        {
+          "id": "obj.ch4_qualified",
+          "text": "获得武林大会参赛资格",
+          "target": 1
+        }
+      ],
+      "unlocks": [
+        { "type": "feature", "id": "tournament", "name": "武林大会" }
+      ],
+      "keyEvents": [
+        { "id": "evt.tournament_notice", "text": "第36月：武林大会", "month": 36 }
+      ]
+    },
+    {
+      "id": "story.ch5",
+      "title": "武林大会",
+      "monthRange": { "start": 36, "end": 36 },
+      "objectives": [
+        {
+          "id": "obj.ch5_win",
+          "text": "在武林大会中夺冠",
+          "target": 1
+        }
+      ],
+      "unlocks": [],
+      "keyEvents": [
+        { "id": "evt.grand_tournament", "text": "第36月：武林大会决赛", "month": 36 }
+      ]
+    }
+  ]
+}

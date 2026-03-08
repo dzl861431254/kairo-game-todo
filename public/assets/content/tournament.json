@@ -1,0 +1,69 @@
+{
+  "phases": [
+    {
+      "id": "announcement",
+      "name": "宣布召开",
+      "durationMonths": 0,
+      "description": "各大门派收到武林大会请帖，群雄共赴盛约。大会宣布开幕，天下武者云集。"
+    },
+    {
+      "id": "gathering",
+      "name": "群雄汇聚",
+      "durationMonths": 1,
+      "description": "天下豪杰齐聚大会，相互结交试探，势力暗中博弈，大会气氛日趋紧张。"
+    },
+    {
+      "id": "martial",
+      "name": "武道比试",
+      "durationMonths": 1,
+      "description": "擂台三关正式开启，以武论英雄。初赛、复赛、决赛依次展开，真力在此一决高下。"
+    },
+    {
+      "id": "debate",
+      "name": "论道辩难",
+      "durationMonths": 1,
+      "description": "论剑台上，以文会友，辩明正邪之道。悟性、传承与正道形象在此接受考验。"
+    },
+    {
+      "id": "politics",
+      "name": "纵横结盟",
+      "durationMonths": 1,
+      "description": "幕后交锋正式开始。拉票结盟、利益交换、情报博弈，盟主归属在此暗中决定。"
+    },
+    {
+      "id": "conclusion",
+      "name": "盟主归属",
+      "durationMonths": 0,
+      "description": "最终投票结果揭晓，武林盟主尘埃落定。各方势力因此重新排列，江湖格局由此改写。"
+    }
+  ],
+  "rewards": {
+    "champion": {
+      "title": "武林盟主",
+      "effects": [
+        { "type": "reputation_delta", "delta": 500, "reason": "武林盟主" },
+        { "type": "morale_delta", "delta": 30, "reason": "士气大振" },
+        { "type": "currency_delta", "key": "silver", "delta": 2000, "reason": "各方进贡" }
+      ]
+    },
+    "topThree": {
+      "effects": [
+        { "type": "reputation_delta", "delta": 200, "reason": "大会前三" },
+        { "type": "morale_delta", "delta": 10, "reason": "扬名立万" }
+      ]
+    },
+    "participant": {
+      "effects": [
+        { "type": "reputation_delta", "delta": 50, "reason": "大会参与" }
+      ]
+    }
+  },
+  "entryRequirements": {
+    "reputation": 300,
+    "factionRelation": { "factionId": "faction.righteous", "minRelation": 40 }
+  },
+  "triggerCondition": {
+    "yearModulo": 4,
+    "month": 6
+  }
+}

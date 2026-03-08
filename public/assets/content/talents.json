@@ -1,0 +1,9 @@
+{
+  "talents": [
+    { "grade": "S", "name": "天纵奇才", "probability": 0.03, "monthlyGrowthBonus": 3, "breakthroughBonus": 25, "realmProgressBonus": 3 },
+    { "grade": "A", "name": "资质上佳", "probability": 0.12, "monthlyGrowthBonus": 2, "breakthroughBonus": 15, "realmProgressBonus": 2 },
+    { "grade": "B", "name": "中等之资", "probability": 0.35, "monthlyGrowthBonus": 1, "breakthroughBonus": 8,  "realmProgressBonus": 1 },
+    { "grade": "C", "name": "资质平平", "probability": 0.35, "monthlyGrowthBonus": 0, "breakthroughBonus": 0,  "realmProgressBonus": 0 },
+    { "grade": "D", "name": "根骨愚钝", "probability": 0.15, "monthlyGrowthBonus": -1, "breakthroughBonus": -8, "realmProgressBonus": -1 }
+  ]
+}

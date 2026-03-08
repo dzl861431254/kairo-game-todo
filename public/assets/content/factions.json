@@ -1,0 +1,73 @@
+{
+  "factions": [
+    {
+      "id": "faction.righteous",
+      "name": "正道盟",
+      "desc": "主流门派联盟，崇尚正道，提供大会资格与名望加成。",
+      "relation": 10,
+      "preferences": {
+        "labels": ["qing", "shou"],
+        "alignmentRange": [0, 100]
+      },
+      "thresholds": {
+        "friendly": 60,
+        "hostile": -60
+      }
+    },
+    {
+      "id": "faction.demon",
+      "name": "魔教",
+      "desc": "邪派联盟，高收益高风险，提供邪道武学线索。",
+      "relation": -20,
+      "preferences": {
+        "labels": ["xie", "lie", "gui"],
+        "alignmentRange": [-100, 0]
+      },
+      "thresholds": {
+        "friendly": 60,
+        "hostile": -60
+      }
+    },
+    {
+      "id": "faction.government",
+      "name": "官府",
+      "desc": "朝廷与地方衙门，关系低会招致清剿。",
+      "relation": 0,
+      "preferences": {
+        "labels": ["qing", "zhixu"],
+        "alignmentRange": [-20, 100]
+      },
+      "thresholds": {
+        "friendly": 60,
+        "hostile": -60
+      }
+    },
+    {
+      "id": "faction.merchant",
+      "name": "商会",
+      "desc": "钱与物资渠道，关系高可获折扣与稀有材料。",
+      "relation": 5,
+      "preferences": {
+        "labels": ["gui", "shou"],
+        "alignmentRange": [-50, 50]
+      },
+      "thresholds": {
+        "friendly": 60,
+        "hostile": -60
+      }
+    },
+    {
+      "id": "faction.beggar",
+      "name": "丐帮",
+      "desc": "情报网络，提供情报任务与秘境线索。",
+      "relation": 0,
+      "preferences": {
+        "labels": ["su", "gui"]
+      },
+      "thresholds": {
+        "friendly": 60,
+        "hostile": -60
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "maxEquipSlots": 3,
+  "categories": ["拳法", "剑法", "内功", "轻功", "暗器"],
+  "martialArts": [
+    {
+      "id": "basic_fist",
+      "name": "基础拳法",
+      "category": "拳法",
+      "description": "门派入门拳法，锤炼筋骨",
+      "conflictGroup": "fist",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        { "track": "physique", "delta": 3 }
+      ],
+      "power": 10
+    },
+    {
+      "id": "iron_palm",
+      "name": "铁砂掌",
+      "category": "拳法",
+      "description": "以铁砂淬炼双掌，刚猛无匹",
+      "conflictGroup": "fist",
+      "researchCost": 120,
+      "prerequisites": ["basic_fist"],
+      "trainingBonus": [
+        { "track": "physique", "delta": 5 },
+        { "track": "willpower", "delta": 2 }
+      ],
+      "power": 25
+    },
+    {
+      "id": "dragon_palm",
+      "name": "降龙十八掌",
+      "category": "拳法",
+      "description": "至刚至阳的绝世掌法",
+      "conflictGroup": "fist",
+      "researchCost": 250,
+      "prerequisites": ["iron_palm"],
+      "trainingBonus": [
+        { "track": "physique", "delta": 10 },
+        { "track": "willpower", "delta": 5 }
+      ],
+      "power": 60
+    },
+    {
+      "id": "basic_sword",
+      "name": "基础剑法",
+      "category": "剑法",
+      "description": "剑术入门，讲究灵动快捷",
+      "conflictGroup": "sword",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        { "track": "agility", "delta": 3 }
+      ],
+      "power": 10
+    },
+    {
+      "id": "green_edge_sword",
+      "name": "青锋剑法",
+      "category": "剑法",
+      "description": "剑走轻灵，以巧取胜",
+      "conflictGroup": "sword",
+      "researchCost": 120,
+      "prerequisites": ["basic_sword"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 5 },
+        { "track": "comprehension", "delta": 2 }
+      ],
+      "power": 25
+    },
+    {
+      "id": "dugu_nine_swords",
+      "name": "独孤九剑",
+      "category": "剑法",
+      "description": "无招胜有招，破尽天下武学",
+      "conflictGroup": "sword",
+      "researchCost": 250,
+      "prerequisites": ["green_edge_sword"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 10 },
+        { "track": "comprehension", "delta": 5 }
+      ],
+      "power": 65
+    },
+    {
+      "id": "breathing",
+      "name": "吐纳术",
+      "category": "内功",
+      "description": "调息运气的基本内功心法",
+      "conflictGroup": "internal",
+      "researchCost": 60,
+      "prerequisites": [],
+      "trainingBonus": [
+        { "track": "willpower", "delta": 3 }
+      ],
+      "power": 8
+    },
+    {
+      "id": "purple_mist",
+      "name": "紫霞神功",
+      "category": "内功",
+      "description": "华山派镇派内功，紫气东来",
+      "conflictGroup": "internal",
+      "researchCost": 130,
+      "prerequisites": ["breathing"],
+      "trainingBonus": [
+        { "track": "willpower", "delta": 6 },
+        { "track": "physique", "delta": 3 }
+      ],
+      "power": 30
+    },
+    {
+      "id": "nine_yang",
+      "name": "九阳神功",
+      "category": "内功",
+      "description": "至阳至刚的绝世内功",
+      "conflictGroup": "internal",
+      "researchCost": 280,
+      "prerequisites": ["purple_mist"],
+      "trainingBonus": [
+        { "track": "willpower", "delta": 12 },
+        { "track": "physique", "delta": 6 }
+      ],
+      "power": 70
+    },
+    {
+      "id": "basic_movement",
+      "name": "基础身法",
+      "category": "轻功",
+      "description": "行走如风的基本步法",
+      "conflictGroup": "movement",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        { "track": "agility", "delta": 3 }
+      ],
+      "power": 5
+    },
+    {
+      "id": "wave_steps",
+      "name": "凌波微步",
+      "category": "轻功",
+      "description": "步法灵动飘逸，难以捉摸",
+      "conflictGroup": "movement",
+      "researchCost": 120,
+      "prerequisites": ["basic_movement"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 6 },
+        { "track": "charisma", "delta": 2 }
+      ],
+      "power": 20
+    },
+    {
+      "id": "cloud_ladder",
+      "name": "梯云纵",
+      "category": "轻功",
+      "description": "纵跃如飞，天下轻功之冠",
+      "conflictGroup": "movement",
+      "researchCost": 250,
+      "prerequisites": ["wave_steps"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 10 },
+        { "track": "charisma", "delta": 4 }
+      ],
+      "power": 45
+    },
+    {
+      "id": "basic_hidden",
+      "name": "基础暗器",
+      "category": "暗器",
+      "description": "飞刀暗镖的基本手法",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        { "track": "agility", "delta": 2 },
+        { "track": "comprehension", "delta": 1 }
+      ],
+      "power": 8
+    },
+    {
+      "id": "flower_rain",
+      "name": "满天花雨",
+      "category": "暗器",
+      "description": "暗器如雨，令人防不胜防",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 130,
+      "prerequisites": ["basic_hidden"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 4 },
+        { "track": "comprehension", "delta": 3 }
+      ],
+      "power": 22
+    },
+    {
+      "id": "pear_blossom_needle",
+      "name": "暴雨梨花针",
+      "category": "暗器",
+      "description": "一发二十七枚银针，天下暗器之王",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 260,
+      "prerequisites": ["flower_rain"],
+      "trainingBonus": [
+        { "track": "agility", "delta": 8 },
+        { "track": "comprehension", "delta": 6 }
+      ],
+      "power": 55
+    }
+  ]
+}

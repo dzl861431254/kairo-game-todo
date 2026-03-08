@@ -1,0 +1,21 @@
+{
+  "name": "kailuo_phaser",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "validate": "npx tsx tools/content_validate.ts",
+    "simulate": "npx tsx tools/simulate_10years.ts",
+    "test": "npx tsx tests/smoke_engine.test.ts && npx tsx tests/smoke_events.test.ts && npx tsx tests/smoke_mission_chain.test.ts && npx tsx tests/smoke_tournament.test.ts && npx tsx tests/smoke_integration.test.ts && npx tsx tests/smoke_cultivation.test.ts && npx tsx tests/smoke_mastership.test.ts && npx tsx tests/smoke_building_upgrade.test.ts && npx tsx tests/smoke_faction_mission_weight.test.ts && npx tsx tests/smoke_endings.test.ts && npx tsx tests/smoke_mainline_unlocks.test.ts && npx tsx tests/smoke_tournament_prep.test.ts && npx tsx tests/smoke_tournament_3passes.test.ts && npx tsx tests/smoke_disciple_events.test.ts && npx tsx tests/smoke_mission_chains_s44.test.ts && npx tsx tests/regression_36month.test.ts && npx tsx tests/smoke_mainline_objectives.test.ts"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  }
+}

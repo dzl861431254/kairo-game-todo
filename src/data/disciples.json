@@ -1,0 +1,29 @@
+{
+  "namePools": {
+    "surnames": [
+      "李", "张", "王", "赵", "陈", "刘", "杨", "黄", "周", "吴",
+      "郑", "孙", "马", "朱", "胡", "林", "郭", "何", "高", "罗",
+      "萧", "谢", "唐", "韩", "冯", "于", "董", "曹", "袁", "许"
+    ],
+    "givenNames": [
+      "云飞", "剑心", "明月", "青山", "天赐", "若水", "风清", "雪梅",
+      "铁柱", "翠花", "逸仙", "慧明", "子龙", "玉兰", "英豪", "秀莲",
+      "志远", "婉清", "浩然", "灵儿", "无忌", "小昭", "敏敏", "芷若",
+      "不悔", "莫愁", "少侠", "含光", "惊鸿", "落雁"
+    ]
+  },
+  "statDefs": [
+    { "id": "physique",       "name": "体魄", "min": 20, "max": 80 },
+    { "id": "comprehension",  "name": "悟性", "min": 20, "max": 80 },
+    { "id": "willpower",      "name": "心志", "min": 20, "max": 80 },
+    { "id": "agility",        "name": "身法", "min": 20, "max": 80 },
+    { "id": "charisma",       "name": "气质", "min": 20, "max": 80 }
+  ],
+  "recruitPool": {
+    "baseSize": 3,
+    "maxSize": 6,
+    "reputationBonusThreshold": 50,
+    "reputationBonusSize": 1
+  },
+  "maxDiscipleCount": 20
+}

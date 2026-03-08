@@ -1,0 +1,97 @@
+{
+  "realms": [
+    {
+      "id": "mortal",
+      "name": "凡人",
+      "order": 0,
+      "attrMultiplier": 1.0,
+      "maxMartialSlots": 1,
+      "requirements": { "stats": {}, "realmProgressMin": 0 }
+    },
+    {
+      "id": "qi_sense",
+      "name": "感气",
+      "order": 1,
+      "attrMultiplier": 1.15,
+      "maxMartialSlots": 2,
+      "requirements": {
+        "stats": { "physique": 30, "comprehension": 25 },
+        "realmProgressMin": 80,
+        "resources": { "silver": 100 }
+      }
+    },
+    {
+      "id": "qi_gather",
+      "name": "聚气",
+      "order": 2,
+      "attrMultiplier": 1.3,
+      "maxMartialSlots": 2,
+      "requirements": {
+        "stats": { "physique": 45, "comprehension": 40 },
+        "realmProgressMin": 80,
+        "resources": { "silver": 300, "herbs": 50 }
+      }
+    },
+    {
+      "id": "foundation",
+      "name": "筑基",
+      "order": 3,
+      "attrMultiplier": 1.5,
+      "maxMartialSlots": 3,
+      "requirements": {
+        "stats": { "physique": 60, "comprehension": 55, "willpower": 40 },
+        "realmProgressMin": 85,
+        "resources": { "silver": 800, "herbs": 150 },
+        "items": ["item_foundation_pill"]
+      }
+    },
+    {
+      "id": "inner_core",
+      "name": "结丹",
+      "order": 4,
+      "attrMultiplier": 1.75,
+      "maxMartialSlots": 3,
+      "requirements": {
+        "stats": { "physique": 75, "comprehension": 70, "willpower": 55 },
+        "realmProgressMin": 85,
+        "resources": { "silver": 2000, "herbs": 400 }
+      }
+    },
+    {
+      "id": "golden_core",
+      "name": "金丹",
+      "order": 5,
+      "attrMultiplier": 2.0,
+      "maxMartialSlots": 4,
+      "requirements": {
+        "stats": { "physique": 90, "comprehension": 85, "willpower": 70 },
+        "realmProgressMin": 90,
+        "resources": { "silver": 5000, "herbs": 1000 }
+      }
+    },
+    {
+      "id": "nascent",
+      "name": "元婴",
+      "order": 6,
+      "attrMultiplier": 2.25,
+      "maxMartialSlots": 4,
+      "requirements": {
+        "stats": { "physique": 100, "comprehension": 95, "willpower": 85 },
+        "realmProgressMin": 90,
+        "resources": { "silver": 10000, "herbs": 2000 }
+      }
+    },
+    {
+      "id": "transcend",
+      "name": "化神",
+      "order": 7,
+      "attrMultiplier": 2.5,
+      "maxMartialSlots": 5,
+      "requirements": {
+        "stats": { "physique": 120, "comprehension": 110, "willpower": 100 },
+        "realmProgressMin": 95,
+        "resources": { "silver": 25000, "herbs": 5000 }
+      }
+    }
+  ]
+}

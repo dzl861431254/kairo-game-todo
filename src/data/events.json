@@ -1,0 +1,432 @@
+{
+  "events": [
+    {
+      "id": "disciple_spar",
+      "name": "弟子切磋",
+      "description": "两名弟子在练武场比试武艺，围观者众。",
+      "conditions": [
+        { "type": "state", "field": "disciples.length", "op": "gte", "value": 2 }
+      ],
+      "weight": 10,
+      "cooldownMonths": 3,
+      "once": false,
+      "options": [
+        {
+          "id": "encourage",
+          "text": "鼓励比试，赢者赏银",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -10, "reason": "切磋奖赏" },
+            { "type": "morale_delta", "delta": 3, "reason": "比试助兴" }
+          ]
+        },
+        {
+          "id": "stop",
+          "text": "制止比试，让他们回去修炼",
+          "effects": [
+            { "type": "morale_delta", "delta": -1, "reason": "扫兴" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kitchen_fire",
+      "name": "膳堂失火",
+      "description": "膳堂不慎起火，弟子们紧急救援。",
+      "conditions": [],
+      "weight": 5,
+      "cooldownMonths": 6,
+      "once": false,
+      "options": [
+        {
+          "id": "fight_fire",
+          "text": "组织弟子全力灭火",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "修缮费用" }
+          ],
+          "roll": {
+            "chance": 0.6,
+            "successEffects": [
+              { "type": "morale_delta", "delta": 2, "reason": "齐心灭火" },
+              { "type": "reputation_delta", "delta": 1, "reason": "应对得当" }
+            ],
+            "failEffects": [
+              { "type": "currency_delta", "key": "silver", "delta": -30, "reason": "火势蔓延损失" },
+              { "type": "morale_delta", "delta": -3, "reason": "灭火不力" }
+            ]
+          }
+        },
+        {
+          "id": "abandon",
+          "text": "放弃膳堂，保护其他建筑",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -50, "reason": "膳堂重建" },
+            { "type": "morale_delta", "delta": -2, "reason": "士气低落" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wanderer_visit",
+      "name": "侠客来访",
+      "description": "一位云游侠客慕名前来拜访。",
+      "conditions": [
+        { "type": "state", "field": "resources.reputation", "op": "gte", "value": 20 }
+      ],
+      "weight": 8,
+      "cooldownMonths": 4,
+      "once": false,
+      "options": [
+        {
+          "id": "welcome",
+          "text": "盛情款待",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -15, "reason": "款待侠客" },
+            { "type": "reputation_delta", "delta": 3, "reason": "好客之名" }
+          ]
+        },
+        {
+          "id": "spar",
+          "text": "邀请切磋武艺",
+          "effects": [],
+          "roll": {
+            "chance": 0.4,
+            "successEffects": [
+              { "type": "reputation_delta", "delta": 5, "reason": "技压群雄" },
+              { "type": "morale_delta", "delta": 3, "reason": "扬名立万" }
+            ],
+            "failEffects": [
+              { "type": "reputation_delta", "delta": -2, "reason": "技不如人" },
+              { "type": "morale_delta", "delta": -1, "reason": "略感沮丧" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "herb_shortage",
+      "name": "药材短缺",
+      "description": "门中药材库存告急，弟子训练伤病难以救治。",
+      "conditions": [
+        { "type": "state", "field": "resources.inventories.herbs", "op": "lte", "value": 5 }
+      ],
+      "weight": 6,
+      "cooldownMonths": 4,
+      "once": false,
+      "options": [
+        {
+          "id": "buy",
+          "text": "花银两采购药材",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -30, "reason": "采购药材" },
+            { "type": "inventory_delta", "key": "herbs", "delta": 8, "reason": "紧急采购" }
+          ]
+        },
+        {
+          "id": "endure",
+          "text": "节约用药，暂时忍耐",
+          "effects": [
+            { "type": "morale_delta", "delta": -3, "reason": "缺药影响" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reputation_spread",
+      "name": "名声远播",
+      "description": "门派的声名传至远方，引来各方关注。",
+      "conditions": [
+        { "type": "state", "field": "resources.reputation", "op": "gte", "value": 50 }
+      ],
+      "weight": 6,
+      "cooldownMonths": 6,
+      "once": false,
+      "options": [
+        {
+          "id": "celebrate",
+          "text": "设宴庆祝",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "庆功宴" },
+            { "type": "morale_delta", "delta": 5, "reason": "欢庆鼓舞" },
+            { "type": "reputation_delta", "delta": 3, "reason": "声势更盛" }
+          ]
+        },
+        {
+          "id": "humble",
+          "text": "低调行事",
+          "effects": [
+            { "type": "reputation_delta", "delta": 1, "reason": "稳步发展" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disciple_conflict",
+      "name": "弟子矛盾",
+      "description": "门中弟子因修炼理念不合产生争执。",
+      "conditions": [
+        { "type": "state", "field": "disciples.length", "op": "gte", "value": 3 }
+      ],
+      "weight": 7,
+      "cooldownMonths": 3,
+      "once": false,
+      "options": [
+        {
+          "id": "mediate",
+          "text": "亲自调解",
+          "effects": [
+            { "type": "morale_delta", "delta": 2, "reason": "化解矛盾" }
+          ],
+          "roll": {
+            "chance": 0.7,
+            "successEffects": [
+              { "type": "morale_delta", "delta": 3, "reason": "握手言和" }
+            ],
+            "failEffects": [
+              { "type": "morale_delta", "delta": -2, "reason": "调解失败" }
+            ]
+          }
+        },
+        {
+          "id": "ignore",
+          "text": "不予理会",
+          "effects": [
+            { "type": "morale_delta", "delta": -4, "reason": "矛盾加剧" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merchant_caravan",
+      "name": "商队到访",
+      "description": "一支商队途经门派，提出交易请求。",
+      "conditions": [],
+      "weight": 10,
+      "cooldownMonths": 2,
+      "once": false,
+      "options": [
+        {
+          "id": "trade",
+          "text": "进行交易",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "购入物资" },
+            { "type": "inventory_delta", "key": "herbs", "delta": 5, "reason": "购入药材" },
+            { "type": "inventory_delta", "key": "iron", "delta": 3, "reason": "购入铁料" }
+          ]
+        },
+        {
+          "id": "decline",
+          "text": "婉言谢绝",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "mysterious_scroll",
+      "name": "神秘卷轴",
+      "description": "弟子在山中发现一卷残破的武学卷轴。",
+      "conditions": [],
+      "weight": 3,
+      "cooldownMonths": 0,
+      "once": true,
+      "options": [
+        {
+          "id": "study",
+          "text": "尝试研读",
+          "effects": [],
+          "roll": {
+            "chance": 0.5,
+            "successEffects": [
+              { "type": "reputation_delta", "delta": 5, "reason": "参悟卷轴" },
+              { "type": "morale_delta", "delta": 5, "reason": "喜获武学" }
+            ],
+            "failEffects": [
+              { "type": "morale_delta", "delta": -2, "reason": "卷轴难解" }
+            ]
+          }
+        },
+        {
+          "id": "sell",
+          "text": "转卖卷轴",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": 50, "reason": "出售卷轴" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bandit_threat",
+      "name": "匪患预警",
+      "description": "附近山匪活动猖獗，威胁门派安全。",
+      "conditions": [
+        { "type": "state", "field": "resources.reputation", "op": "gte", "value": 30 }
+      ],
+      "weight": 5,
+      "cooldownMonths": 6,
+      "once": false,
+      "options": [
+        {
+          "id": "patrol",
+          "text": "加强巡逻防备",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -15, "reason": "巡防开支" }
+          ],
+          "roll": {
+            "chance": 0.7,
+            "successEffects": [
+              { "type": "reputation_delta", "delta": 3, "reason": "保境安民" },
+              { "type": "morale_delta", "delta": 2, "reason": "安全感提升" }
+            ],
+            "failEffects": [
+              { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "遭遇突袭损失" }
+            ]
+          }
+        },
+        {
+          "id": "pay_off",
+          "text": "花钱消灾",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -40, "reason": "打点山匪" },
+            { "type": "reputation_delta", "delta": -2, "reason": "委曲求全" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "auspicious_sign",
+      "name": "吉兆",
+      "description": "天现瑞象，门中弟子士气大振。",
+      "conditions": [
+        { "type": "state", "field": "resources.alignmentValue", "op": "gte", "value": 5 }
+      ],
+      "weight": 4,
+      "cooldownMonths": 12,
+      "once": false,
+      "options": [
+        {
+          "id": "pray",
+          "text": "设坛祈福",
+          "effects": [
+            { "type": "morale_delta", "delta": 5, "reason": "吉兆鼓舞" },
+            { "type": "reputation_delta", "delta": 2, "reason": "正道之光" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tournament_invitation",
+      "name": "武林大会邀请",
+      "description": "收到武林大会的邀请函。",
+      "conditions": [],
+      "weight": 0,
+      "cooldownMonths": 0,
+      "once": false,
+      "options": [
+        {
+          "id": "accept",
+          "text": "接受邀请",
+          "effects": [
+            { "type": "reputation_delta", "delta": 2, "reason": "受邀参会" },
+            { "type": "morale_delta", "delta": 3, "reason": "期待大会" }
+          ]
+        },
+        {
+          "id": "decline",
+          "text": "婉拒邀请",
+          "effects": [
+            { "type": "reputation_delta", "delta": -1, "reason": "缺席大会" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tournament_compete",
+      "name": "武林大会·比试",
+      "description": "派遣弟子参加武林大会初赛。",
+      "conditions": [],
+      "weight": 0,
+      "cooldownMonths": 0,
+      "once": false,
+      "options": [
+        {
+          "id": "compete",
+          "text": "全力以赴",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -30, "reason": "参赛费用" }
+          ],
+          "roll": {
+            "chance": 0.5,
+            "successEffects": [
+              { "type": "reputation_delta", "delta": 8, "reason": "初赛晋级" },
+              { "type": "morale_delta", "delta": 5, "reason": "旗开得胜" }
+            ],
+            "failEffects": [
+              { "type": "reputation_delta", "delta": 1, "reason": "虽败犹荣" },
+              { "type": "morale_delta", "delta": -2, "reason": "初赛落败" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "tournament_finals",
+      "name": "武林大会·决赛",
+      "description": "门派弟子杀入决赛，争夺武林至尊。",
+      "conditions": [],
+      "weight": 0,
+      "cooldownMonths": 0,
+      "once": false,
+      "options": [
+        {
+          "id": "fight",
+          "text": "力争冠军",
+          "effects": [
+            { "type": "currency_delta", "key": "silver", "delta": -50, "reason": "决赛筹备" }
+          ],
+          "roll": {
+            "chance": 0.3,
+            "successEffects": [
+              { "type": "reputation_delta", "delta": 20, "reason": "夺得武林至尊" },
+              { "type": "currency_delta", "key": "silver", "delta": 200, "reason": "冠军奖金" },
+              { "type": "morale_delta", "delta": 10, "reason": "荣耀加身" }
+            ],
+            "failEffects": [
+              { "type": "reputation_delta", "delta": 5, "reason": "决赛亚军" },
+              { "type": "morale_delta", "delta": 2, "reason": "虽败犹荣" }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "annualChains": [
+    {
+      "id": "martial_arts_tournament",
+      "name": "武林大会",
+      "description": "一年一度的武林盛事，各门派齐聚比试。",
+      "triggerMonth": 11,
+      "stages": [
+        {
+          "stageIndex": 0,
+          "eventId": "tournament_invitation",
+          "conditions": [
+            { "type": "state", "field": "resources.reputation", "op": "gte", "value": 20 }
+          ]
+        },
+        {
+          "stageIndex": 1,
+          "eventId": "tournament_compete",
+          "conditions": [
+            { "type": "state", "field": "disciples.length", "op": "gte", "value": 3 }
+          ]
+        },
+        {
+          "stageIndex": 2,
+          "eventId": "tournament_finals",
+          "conditions": [
+            { "type": "state", "field": "resources.reputation", "op": "gte", "value": 40 }
+          ]
+        }
+      ]
+    }
+  ]
+}

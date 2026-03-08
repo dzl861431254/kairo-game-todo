@@ -1,0 +1,58 @@
+{
+  "endings": [
+    {
+      "id": "righteous_leader",
+      "title": "正道盟主",
+      "description": "以德服人，广结善缘，声望卓著。大会之上力压群雄，被众英雄推举为武林盟主，开创一代太平盛世。",
+      "requirements": {
+        "factionRelation": { "faction.righteous": 60 },
+        "reputation": 500,
+        "tournamentRank": 3
+      },
+      "priority": 4
+    },
+    {
+      "id": "martial_champion",
+      "title": "武林至尊",
+      "description": "三番擂台，百战百胜。武道已臻化境，天下英雄无不折服，武林至尊之名实至名归！",
+      "requirements": {
+        "martialWins": 3
+      },
+      "priority": 2
+    },
+    {
+      "id": "shadow_master",
+      "title": "幕后盟主",
+      "description": "八面玲珑，纵横江湖。你编织了庞大的关系网络，武林盟主或许是他人，真正的决策者却是你。",
+      "requirements": {
+        "shadowScore": 80,
+        "factionsAbove40": 3
+      },
+      "priority": 3
+    },
+    {
+      "id": "demon_lord",
+      "title": "魔道巨擘",
+      "description": "你与魔教深度合作，踏上魔道巅峰。正道视你为公敌，然而邪魔奉你为领袖。是非功过，自有后人评说。",
+      "requirements": {
+        "factionRelation": { "faction.demon": 60 },
+        "factionRelationMax": { "faction.righteous": -40 }
+      },
+      "priority": 1
+    },
+    {
+      "id": "ordinary_sect",
+      "title": "一方宗门",
+      "description": "经过多年经营，门派在江湖中站稳脚跟。虽未能问鼎武林，但弟子成材、家业兴旺，亦是一番佳话。",
+      "requirements": {},
+      "priority": 5
+    }
+  ],
+  "scoreWeights": {
+    "reputation": { "max": 25, "divisor": 40 },
+    "buildings": { "max": 20 },
+    "legacy": { "max": 20, "artsMax": 10, "artsMultiplier": 2, "realmMax": 10, "realmMultiplier": 2 },
+    "disciples": { "max": 20, "divisor": 15 },
+    "factions": { "max": 15, "divisor": 10 }
+  }
+}

@@ -1,0 +1,1343 @@
+{
+  "maxEquipSlots": 3,
+  "categories": [
+    "拳法",
+    "剑法",
+    "内功",
+    "轻功",
+    "暗器"
+  ],
+  "martialArts": [
+    {
+      "id": "basic_fist",
+      "name": "基础拳法",
+      "category": "拳法",
+      "description": "门派入门拳法，锤炼筋骨",
+      "conflictGroup": "fist",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 3
+        }
+      ],
+      "power": 10,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      }
+    },
+    {
+      "id": "luohan_fist",
+      "name": "罗汉拳",
+      "category": "拳法",
+      "description": "少林入门拳法，刚柔相济，壮骨健体",
+      "conflictGroup": "fist",
+      "researchCost": 60,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 3
+        },
+        {
+          "track": "willpower",
+          "delta": 1
+        }
+      ],
+      "power": 12,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      }
+    },
+    {
+      "id": "iron_palm",
+      "name": "铁砂掌",
+      "category": "拳法",
+      "description": "以铁砂淬炼双掌，刚猛无匹",
+      "conflictGroup": "fist",
+      "researchCost": 120,
+      "prerequisites": [
+        "basic_fist"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 5
+        },
+        {
+          "track": "willpower",
+          "delta": 2
+        }
+      ],
+      "power": 25,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 20,
+        "silver": 50
+      }
+    },
+    {
+      "id": "tiger_fist",
+      "name": "伏虎拳",
+      "category": "拳法",
+      "description": "模拟猛虎扑击之势，力道刚猛如虎",
+      "conflictGroup": "fist",
+      "researchCost": 130,
+      "prerequisites": [
+        "luohan_fist"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 6
+        },
+        {
+          "track": "willpower",
+          "delta": 2
+        }
+      ],
+      "power": 28,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 25,
+        "silver": 60
+      }
+    },
+    {
+      "id": "vajra_palm",
+      "name": "大力金刚掌",
+      "category": "拳法",
+      "description": "融合金刚之力，掌力排山倒海",
+      "conflictGroup": "fist",
+      "researchCost": 200,
+      "prerequisites": [
+        "iron_palm"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 8
+        },
+        {
+          "track": "willpower",
+          "delta": 4
+        }
+      ],
+      "power": 42,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 6,
+        "comprehensionReq": 40,
+        "silver": 180
+      }
+    },
+    {
+      "id": "dragon_palm",
+      "name": "降龙十八掌",
+      "category": "拳法",
+      "description": "至刚至阳的绝世掌法",
+      "conflictGroup": "fist",
+      "researchCost": 250,
+      "prerequisites": [
+        "iron_palm"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 10
+        },
+        {
+          "track": "willpower",
+          "delta": 5
+        }
+      ],
+      "power": 60,
+      "martialCategory": "ultimate",
+      "tier": 4,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 8,
+        "comprehensionReq": 50,
+        "silver": 300
+      }
+    },
+    {
+      "id": "six_meridian_sword",
+      "name": "六脉神剑",
+      "category": "拳法",
+      "description": "以内力化剑气，无形之剑出指端，威力无匹",
+      "conflictGroup": "fist",
+      "researchCost": 320,
+      "prerequisites": [
+        "dragon_palm"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 10
+        },
+        {
+          "track": "willpower",
+          "delta": 6
+        }
+      ],
+      "power": 72,
+      "martialCategory": "outer",
+      "tier": 4,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 10,
+        "comprehensionReq": 60,
+        "silver": 400
+      }
+    },
+    {
+      "id": "yi_yang_finger",
+      "name": "一阳指",
+      "category": "拳法",
+      "description": "大理段氏绝技，一指点穴，内力精纯",
+      "conflictGroup": "fist",
+      "researchCost": 500,
+      "prerequisites": [
+        "six_meridian_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 12
+        },
+        {
+          "track": "willpower",
+          "delta": 8
+        }
+      ],
+      "power": 88,
+      "martialCategory": "outer",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 15,
+        "comprehensionReq": 80,
+        "silver": 800
+      }
+    },
+    {
+      "id": "heart_break_palm",
+      "name": "黯然销魂掌",
+      "category": "拳法",
+      "description": "天下至悲之掌，情到深处，威力无敌，令人神消魂散",
+      "conflictGroup": "fist",
+      "researchCost": 800,
+      "prerequisites": [
+        "yi_yang_finger"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 15
+        },
+        {
+          "track": "willpower",
+          "delta": 10
+        },
+        {
+          "track": "charisma",
+          "delta": 5
+        }
+      ],
+      "power": 100,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "lockedByDefault": true,
+      "learnCost": {
+        "months": 24,
+        "comprehensionReq": 95,
+        "silver": 2000
+      }
+    },
+    {
+      "id": "basic_sword",
+      "name": "基础剑法",
+      "category": "剑法",
+      "description": "剑术入门，讲究灵动快捷",
+      "conflictGroup": "sword",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 3
+        }
+      ],
+      "power": 10,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      },
+      "lockedByDefault": true
+    },
+    {
+      "id": "huashan_sword",
+      "name": "华山剑法",
+      "category": "剑法",
+      "description": "华山派传承剑法，兼顾气宗与剑宗之妙",
+      "conflictGroup": "sword",
+      "researchCost": 65,
+      "prerequisites": [
+        "basic_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 3
+        },
+        {
+          "track": "comprehension",
+          "delta": 1
+        }
+      ],
+      "power": 13,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 12
+      },
+      "lockedByDefault": true
+    },
+    {
+      "id": "green_edge_sword",
+      "name": "青锋剑法",
+      "category": "剑法",
+      "description": "剑走轻灵，以巧取胜",
+      "conflictGroup": "sword",
+      "researchCost": 120,
+      "prerequisites": [
+        "basic_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 5
+        },
+        {
+          "track": "comprehension",
+          "delta": 2
+        }
+      ],
+      "power": 25,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 20,
+        "silver": 50
+      }
+    },
+    {
+      "id": "wudang_sword",
+      "name": "武当剑",
+      "category": "剑法",
+      "description": "武当山正宗剑法，以柔克刚，绵绵不绝",
+      "conflictGroup": "sword",
+      "researchCost": 130,
+      "prerequisites": [
+        "huashan_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 5
+        },
+        {
+          "track": "comprehension",
+          "delta": 2
+        }
+      ],
+      "power": 28,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 25,
+        "silver": 60
+      }
+    },
+    {
+      "id": "qingcheng_sword",
+      "name": "青城剑法",
+      "category": "剑法",
+      "description": "青城派轻灵剑法，剑势如行云流水",
+      "conflictGroup": "sword",
+      "researchCost": 200,
+      "prerequisites": [
+        "green_edge_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 7
+        },
+        {
+          "track": "comprehension",
+          "delta": 3
+        }
+      ],
+      "power": 40,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 7,
+        "comprehensionReq": 42,
+        "silver": 200
+      }
+    },
+    {
+      "id": "pijie_sword",
+      "name": "辟邪剑法",
+      "category": "剑法",
+      "description": "速度奇快无比，剑出如电，令人难以捉摸",
+      "conflictGroup": "sword",
+      "researchCost": 260,
+      "prerequisites": [
+        "qingcheng_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 9
+        },
+        {
+          "track": "comprehension",
+          "delta": 4
+        }
+      ],
+      "power": 50,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 8,
+        "comprehensionReq": 50,
+        "silver": 280
+      }
+    },
+    {
+      "id": "dugu_nine_swords",
+      "name": "独孤九剑",
+      "category": "剑法",
+      "description": "无招胜有招，破尽天下武学",
+      "conflictGroup": "sword",
+      "researchCost": 250,
+      "prerequisites": [
+        "green_edge_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 10
+        },
+        {
+          "track": "comprehension",
+          "delta": 5
+        }
+      ],
+      "power": 65,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 12,
+        "comprehensionReq": 70,
+        "silver": 500
+      }
+    },
+    {
+      "id": "tai_chi_sword",
+      "name": "太极剑",
+      "category": "剑法",
+      "description": "融太极之道于剑法，以静制动，以柔克刚",
+      "conflictGroup": "sword",
+      "researchCost": 400,
+      "prerequisites": [
+        "dugu_nine_swords"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 10
+        },
+        {
+          "track": "comprehension",
+          "delta": 6
+        },
+        {
+          "track": "willpower",
+          "delta": 3
+        }
+      ],
+      "power": 82,
+      "martialCategory": "outer",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 12,
+        "comprehensionReq": 70,
+        "silver": 600
+      }
+    },
+    {
+      "id": "no_sword",
+      "name": "无招胜有招",
+      "category": "剑法",
+      "description": "剑道至境，手中无剑而心中有剑，万剑归一",
+      "conflictGroup": "sword",
+      "researchCost": 800,
+      "prerequisites": [
+        "tai_chi_sword"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 15
+        },
+        {
+          "track": "comprehension",
+          "delta": 10
+        },
+        {
+          "track": "willpower",
+          "delta": 5
+        }
+      ],
+      "power": 100,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "lockedByDefault": true,
+      "learnCost": {
+        "months": 24,
+        "comprehensionReq": 95,
+        "silver": 2000
+      }
+    },
+    {
+      "id": "breathing",
+      "name": "吐纳术",
+      "category": "内功",
+      "description": "调息运气的基本内功心法",
+      "conflictGroup": "internal",
+      "researchCost": 60,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "willpower",
+          "delta": 3
+        }
+      ],
+      "power": 8,
+      "martialCategory": "inner",
+      "tier": 1,
+      "learnCost": {
+        "months": 3,
+        "comprehensionReq": 15
+      }
+    },
+    {
+      "id": "sitting_forget",
+      "name": "坐忘心经",
+      "category": "内功",
+      "description": "清净无为，坐忘身心，调养精气神三宝",
+      "conflictGroup": "internal",
+      "researchCost": 65,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "willpower",
+          "delta": 3
+        },
+        {
+          "track": "comprehension",
+          "delta": 2
+        }
+      ],
+      "power": 10,
+      "martialCategory": "inner",
+      "tier": 1,
+      "learnCost": {
+        "months": 3,
+        "comprehensionReq": 15
+      }
+    },
+    {
+      "id": "hunyan_gong",
+      "name": "混元功",
+      "category": "内功",
+      "description": "融合天地混元之气，内力浑厚绵长",
+      "conflictGroup": "internal",
+      "researchCost": 120,
+      "prerequisites": [
+        "breathing"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 4
+        },
+        {
+          "track": "willpower",
+          "delta": 5
+        }
+      ],
+      "power": 22,
+      "martialCategory": "inner",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 5,
+        "comprehensionReq": 30,
+        "silver": 80
+      }
+    },
+    {
+      "id": "purple_mist",
+      "name": "紫霞神功",
+      "category": "内功",
+      "description": "华山派镇派内功，紫气东来",
+      "conflictGroup": "internal",
+      "researchCost": 130,
+      "prerequisites": [
+        "breathing"
+      ],
+      "trainingBonus": [
+        {
+          "track": "willpower",
+          "delta": 6
+        },
+        {
+          "track": "physique",
+          "delta": 3
+        }
+      ],
+      "power": 30,
+      "martialCategory": "inner",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 6,
+        "comprehensionReq": 35,
+        "silver": 150
+      }
+    },
+    {
+      "id": "beiming",
+      "name": "北冥神功",
+      "category": "内功",
+      "description": "以北海之渊蓄内力，吸收天地灵气为己用",
+      "conflictGroup": "internal",
+      "researchCost": 190,
+      "prerequisites": [
+        "hunyan_gong"
+      ],
+      "trainingBonus": [
+        {
+          "track": "willpower",
+          "delta": 7
+        },
+        {
+          "track": "physique",
+          "delta": 4
+        }
+      ],
+      "power": 38,
+      "martialCategory": "inner",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 7,
+        "comprehensionReq": 45,
+        "silver": 180
+      }
+    },
+    {
+      "id": "nine_yang",
+      "name": "九阳神功",
+      "category": "内功",
+      "description": "至阳至刚的绝世内功",
+      "conflictGroup": "internal",
+      "researchCost": 280,
+      "prerequisites": [
+        "purple_mist"
+      ],
+      "trainingBonus": [
+        {
+          "track": "willpower",
+          "delta": 12
+        },
+        {
+          "track": "physique",
+          "delta": 6
+        }
+      ],
+      "power": 70,
+      "martialCategory": "inner",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "learnCost": {
+        "months": 15,
+        "comprehensionReq": 85,
+        "silver": 800
+      }
+    },
+    {
+      "id": "sinew_changing",
+      "name": "易筋经",
+      "category": "内功",
+      "description": "少林绝学，改易筋骨，脱胎换骨，体魄大成",
+      "conflictGroup": "internal",
+      "researchCost": 380,
+      "prerequisites": [
+        "beiming"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 11
+        },
+        {
+          "track": "willpower",
+          "delta": 7
+        }
+      ],
+      "power": 75,
+      "martialCategory": "inner",
+      "tier": 4,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 12,
+        "comprehensionReq": 65,
+        "silver": 500
+      }
+    },
+    {
+      "id": "grand_mystery",
+      "name": "太玄经",
+      "category": "内功",
+      "description": "玄门至典，参悟天道，以神御气，悟性大增",
+      "conflictGroup": "internal",
+      "researchCost": 550,
+      "prerequisites": [
+        "sinew_changing"
+      ],
+      "trainingBonus": [
+        {
+          "track": "comprehension",
+          "delta": 10
+        },
+        {
+          "track": "willpower",
+          "delta": 10
+        }
+      ],
+      "power": 88,
+      "martialCategory": "inner",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 18,
+        "comprehensionReq": 85,
+        "silver": 900
+      }
+    },
+    {
+      "id": "primordial_gong",
+      "name": "先天功",
+      "category": "内功",
+      "description": "先天一炁，混沌未分，修炼此功可返本归元，突破瓶颈",
+      "conflictGroup": "internal",
+      "researchCost": 900,
+      "prerequisites": [
+        "grand_mystery"
+      ],
+      "trainingBonus": [
+        {
+          "track": "physique",
+          "delta": 12
+        },
+        {
+          "track": "willpower",
+          "delta": 12
+        },
+        {
+          "track": "comprehension",
+          "delta": 8
+        }
+      ],
+      "power": 100,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "lockedByDefault": true,
+      "learnCost": {
+        "months": 30,
+        "comprehensionReq": 98,
+        "silver": 3000
+      }
+    },
+    {
+      "id": "basic_movement",
+      "name": "基础身法",
+      "category": "轻功",
+      "description": "行走如风的基本步法",
+      "conflictGroup": "movement",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 3
+        }
+      ],
+      "power": 5,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      }
+    },
+    {
+      "id": "swallow_flip",
+      "name": "燕子翻身",
+      "category": "轻功",
+      "description": "轻盈如燕，翻转腾挪，灵巧避敌",
+      "conflictGroup": "movement",
+      "researchCost": 55,
+      "prerequisites": [
+        "basic_movement"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 3
+        },
+        {
+          "track": "charisma",
+          "delta": 1
+        }
+      ],
+      "power": 8,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      }
+    },
+    {
+      "id": "wave_steps",
+      "name": "凌波微步",
+      "category": "轻功",
+      "description": "步法灵动飘逸，难以捉摸",
+      "conflictGroup": "movement",
+      "researchCost": 120,
+      "prerequisites": [
+        "basic_movement"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 6
+        },
+        {
+          "track": "charisma",
+          "delta": 2
+        }
+      ],
+      "power": 20,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 20,
+        "silver": 50
+      }
+    },
+    {
+      "id": "grass_fly",
+      "name": "草上飞",
+      "category": "轻功",
+      "description": "奔行如飞，脚踏草尖而不折，身轻似燕",
+      "conflictGroup": "movement",
+      "researchCost": 120,
+      "prerequisites": [
+        "swallow_flip"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 5
+        },
+        {
+          "track": "charisma",
+          "delta": 2
+        }
+      ],
+      "power": 22,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 22,
+        "silver": 55
+      }
+    },
+    {
+      "id": "cloud_ladder",
+      "name": "梯云纵",
+      "category": "轻功",
+      "description": "纵跃如飞，天下轻功之冠",
+      "conflictGroup": "movement",
+      "researchCost": 250,
+      "prerequisites": [
+        "wave_steps"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 10
+        },
+        {
+          "track": "charisma",
+          "delta": 4
+        }
+      ],
+      "power": 45,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 7,
+        "comprehensionReq": 45,
+        "silver": 200
+      }
+    },
+    {
+      "id": "divine_change",
+      "name": "神行百变",
+      "category": "轻功",
+      "description": "身形幻化百变，令人眼花缭乱，难以捕捉",
+      "conflictGroup": "movement",
+      "researchCost": 210,
+      "prerequisites": [
+        "grass_fly"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 8
+        },
+        {
+          "track": "charisma",
+          "delta": 3
+        }
+      ],
+      "power": 45,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 8,
+        "comprehensionReq": 48,
+        "silver": 220
+      }
+    },
+    {
+      "id": "snow_walk",
+      "name": "踏雪无痕",
+      "category": "轻功",
+      "description": "行走于雪地而不留脚印，身法飘忽如鬼魅",
+      "conflictGroup": "movement",
+      "researchCost": 320,
+      "prerequisites": [
+        "cloud_ladder"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 10
+        },
+        {
+          "track": "charisma",
+          "delta": 5
+        }
+      ],
+      "power": 65,
+      "martialCategory": "outer",
+      "tier": 4,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 11,
+        "comprehensionReq": 62,
+        "silver": 420
+      }
+    },
+    {
+      "id": "gecko_wall",
+      "name": "壁虎游墙功",
+      "category": "轻功",
+      "description": "如壁虎般攀附垂直峭壁，来去自如",
+      "conflictGroup": "movement",
+      "researchCost": 480,
+      "prerequisites": [
+        "snow_walk"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 13
+        },
+        {
+          "track": "charisma",
+          "delta": 7
+        }
+      ],
+      "power": 82,
+      "martialCategory": "outer",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 16,
+        "comprehensionReq": 80,
+        "silver": 750
+      }
+    },
+    {
+      "id": "earth_shrink",
+      "name": "缩地成寸",
+      "category": "轻功",
+      "description": "道家至高轻功，万里之遥瞬息可至，有若神仙",
+      "conflictGroup": "movement",
+      "researchCost": 850,
+      "prerequisites": [
+        "gecko_wall"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 18
+        },
+        {
+          "track": "charisma",
+          "delta": 10
+        },
+        {
+          "track": "physique",
+          "delta": 5
+        }
+      ],
+      "power": 100,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "lockedByDefault": true,
+      "learnCost": {
+        "months": 25,
+        "comprehensionReq": 95,
+        "silver": 2200
+      }
+    },
+    {
+      "id": "basic_hidden",
+      "name": "基础暗器",
+      "category": "暗器",
+      "description": "飞刀暗镖的基本手法",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 50,
+      "prerequisites": [],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 2
+        },
+        {
+          "track": "comprehension",
+          "delta": 1
+        }
+      ],
+      "power": 8,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 10
+      }
+    },
+    {
+      "id": "flick_finger",
+      "name": "弹指神通",
+      "category": "暗器",
+      "description": "以手指弹出石子或飞物，精准无误，轻描淡写间取人性命",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 60,
+      "prerequisites": [
+        "basic_hidden"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 2
+        },
+        {
+          "track": "comprehension",
+          "delta": 2
+        }
+      ],
+      "power": 10,
+      "martialCategory": "outer",
+      "tier": 1,
+      "learnCost": {
+        "months": 2,
+        "comprehensionReq": 12
+      }
+    },
+    {
+      "id": "flower_rain",
+      "name": "满天花雨",
+      "category": "暗器",
+      "description": "暗器如雨，令人防不胜防",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 130,
+      "prerequisites": [
+        "basic_hidden"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 4
+        },
+        {
+          "track": "comprehension",
+          "delta": 3
+        }
+      ],
+      "power": 22,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 20,
+        "silver": 50
+      }
+    },
+    {
+      "id": "poison_sand",
+      "name": "毒砂掌",
+      "category": "暗器",
+      "description": "掌中藏毒砂，出手时毒砂迸射，令对手防不胜防",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 130,
+      "prerequisites": [
+        "flick_finger"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 3
+        },
+        {
+          "track": "comprehension",
+          "delta": 3
+        }
+      ],
+      "power": 25,
+      "martialCategory": "outer",
+      "tier": 2,
+      "realmRequired": "qi_sense",
+      "learnCost": {
+        "months": 4,
+        "comprehensionReq": 25,
+        "silver": 70
+      }
+    },
+    {
+      "id": "xiao_li_knife",
+      "name": "小李飞刀",
+      "category": "暗器",
+      "description": "例不虚发，百步穿杨，天下第一飞刀，刀出必见血",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 200,
+      "prerequisites": [
+        "flower_rain"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 7
+        },
+        {
+          "track": "comprehension",
+          "delta": 4
+        }
+      ],
+      "power": 42,
+      "martialCategory": "outer",
+      "tier": 3,
+      "realmRequired": "qi_gather",
+      "learnCost": {
+        "months": 7,
+        "comprehensionReq": 44,
+        "silver": 200
+      }
+    },
+    {
+      "id": "pear_blossom_needle",
+      "name": "暴雨梨花针",
+      "category": "暗器",
+      "description": "一发二十七枚银针，天下暗器之王",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 260,
+      "prerequisites": [
+        "flower_rain"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 8
+        },
+        {
+          "track": "comprehension",
+          "delta": 6
+        }
+      ],
+      "power": 55,
+      "martialCategory": "outer",
+      "tier": 4,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 10,
+        "comprehensionReq": 60,
+        "silver": 400
+      }
+    },
+    {
+      "id": "tang_hidden",
+      "name": "唐门暗器",
+      "category": "暗器",
+      "description": "唐门七十二绝技之暗器精髓，多重机关同时发动，令人防不胜防",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 300,
+      "prerequisites": [
+        "xiao_li_knife"
+      ],
+      "trainingBonus": [
+        {
+          "track": "agility",
+          "delta": 9
+        },
+        {
+          "track": "comprehension",
+          "delta": 6
+        }
+      ],
+      "power": 60,
+      "martialCategory": "outer",
+      "tier": 4,
+      "realmRequired": "foundation",
+      "learnCost": {
+        "months": 10,
+        "comprehensionReq": 58,
+        "silver": 380
+      }
+    },
+    {
+      "id": "poison_classic",
+      "name": "毒经",
+      "category": "暗器",
+      "description": "天下用毒之精髓，配合暗器无往不利，百毒不侵亦可精研",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 460,
+      "prerequisites": [
+        "tang_hidden"
+      ],
+      "trainingBonus": [
+        {
+          "track": "comprehension",
+          "delta": 10
+        },
+        {
+          "track": "agility",
+          "delta": 8
+        }
+      ],
+      "power": 80,
+      "martialCategory": "outer",
+      "tier": 5,
+      "realmRequired": "inner_core",
+      "learnCost": {
+        "months": 15,
+        "comprehensionReq": 78,
+        "silver": 700
+      }
+    },
+    {
+      "id": "drain_power",
+      "name": "化功大法",
+      "category": "暗器",
+      "description": "吸人真气为己用，天下至邪之功，令天下武林色变",
+      "conflictGroup": "hidden_weapon",
+      "researchCost": 880,
+      "prerequisites": [
+        "poison_classic"
+      ],
+      "trainingBonus": [
+        {
+          "track": "comprehension",
+          "delta": 12
+        },
+        {
+          "track": "agility",
+          "delta": 10
+        },
+        {
+          "track": "willpower",
+          "delta": 5
+        }
+      ],
+      "power": 100,
+      "martialCategory": "ultimate",
+      "tier": 5,
+      "realmRequired": "golden_core",
+      "lockedByDefault": true,
+      "learnCost": {
+        "months": 24,
+        "comprehensionReq": 96,
+        "silver": 2500
+      }
+    }
+  ]
+}

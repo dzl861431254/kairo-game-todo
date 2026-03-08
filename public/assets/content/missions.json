@@ -1,0 +1,579 @@
+{
+  "templates": [
+    {
+      "id": "bandit_suppression",
+      "name": "剿匪",
+      "description": "清剿山贼匪寇，保境安民",
+      "category": "combat",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 20,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 80, "reason": "剿匪赏金" },
+        { "type": "reputation_delta", "delta": 5, "reason": "剿匪扬名" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -3, "reason": "剿匪失利" }
+      ],
+      "factionId": "faction.righteous",
+      "weight": 1,
+      "eventCardIds": ["ambush", "night_raid", "storm"]
+    },
+    {
+      "id": "herb_gathering",
+      "name": "寻药",
+      "description": "深入山林采集珍稀药材",
+      "category": "exploration",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 5,
+      "rewards": [
+        { "type": "inventory_delta", "key": "herbs", "delta": 10, "reason": "采药收获" }
+      ],
+      "failPenalty": [
+        { "type": "morale_delta", "delta": -2, "reason": "采药无功而返" }
+      ],
+      "eventCardIds": ["lost", "discovery", "storm"]
+    },
+    {
+      "id": "escort_duty",
+      "name": "护镖",
+      "description": "护送商队安全抵达目的地",
+      "category": "combat",
+      "durationMonths": 3,
+      "minPartySize": 3,
+      "recommendedPower": 30,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 200, "reason": "护镖酬劳" },
+        { "type": "reputation_delta", "delta": 8, "reason": "护镖声名" }
+      ],
+      "failPenalty": [
+        { "type": "currency_delta", "key": "silver", "delta": -50, "reason": "镖物损失赔偿" },
+        { "type": "reputation_delta", "delta": -5, "reason": "护镖失败" }
+      ],
+      "factionId": "faction.merchant",
+      "eventCardIds": ["ambush", "night_raid", "storm", "merchant"],
+      "supplyCost": { "food": 5 }
+    },
+    {
+      "id": "exploration",
+      "name": "探秘",
+      "description": "探索江湖中的神秘遗迹",
+      "category": "exploration",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 15,
+      "rewards": [
+        { "type": "reputation_delta", "delta": 10, "reason": "探秘发现" },
+        { "type": "currency_delta", "key": "silver", "delta": 50, "reason": "探秘宝藏" }
+      ],
+      "failPenalty": [
+        { "type": "morale_delta", "delta": -3, "reason": "探秘受挫" }
+      ],
+      "eventCardIds": ["lost", "discovery", "plague_village"]
+    },
+    {
+      "id": "chivalry",
+      "name": "行侠仗义",
+      "description": "仗剑行侠，扶弱济贫",
+      "category": "social",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 10,
+      "rewards": [
+        { "type": "reputation_delta", "delta": 5, "reason": "行侠扬名" },
+        { "type": "alignment_delta", "delta": 5, "reason": "行侠积德" }
+      ],
+      "failPenalty": [
+        { "type": "alignment_delta", "delta": -2, "reason": "行侠失策" }
+      ],
+      "factionId": "faction.righteous",
+      "eventCardIds": ["wounded_traveler", "plague_village", "merchant"]
+    },
+    {
+      "id": "tournament",
+      "name": "比武大会",
+      "description": "参加江湖武林大会，一展身手",
+      "category": "combat",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 25,
+      "rewards": [
+        { "type": "reputation_delta", "delta": 15, "reason": "比武夺魁" },
+        { "type": "currency_delta", "key": "silver", "delta": 50, "reason": "比武奖金" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -5, "reason": "比武落败" }
+      ],
+      "eventCardIds": ["master_challenge", "night_raid"]
+    },
+    {
+      "id": "trade_mission",
+      "name": "经商",
+      "description": "贩卖货物，赚取银两",
+      "category": "trade",
+      "durationMonths": 2,
+      "minPartySize": 1,
+      "recommendedPower": 5,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 150, "reason": "经商盈利" }
+      ],
+      "failPenalty": [
+        { "type": "currency_delta", "key": "silver", "delta": -30, "reason": "经商亏损" }
+      ],
+      "factionId": "faction.merchant",
+      "eventCardIds": ["merchant", "officials", "storm"]
+    },
+    {
+      "id": "diplomacy",
+      "name": "外交",
+      "description": "拜访江湖同道，增进交情",
+      "category": "social",
+      "durationMonths": 2,
+      "minPartySize": 1,
+      "recommendedPower": 10,
+      "rewards": [
+        { "type": "reputation_delta", "delta": 8, "reason": "外交成功" },
+        { "type": "alignment_delta", "delta": 3, "reason": "广结善缘" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -3, "reason": "外交失礼" }
+      ],
+      "factionId": "faction.righteous",
+      "weight": 1,
+      "eventCardIds": ["officials", "merchant", "mutual_aid"]
+    },
+    {
+      "id": "infiltrate",
+      "name": "潜入任务",
+      "description": "潜入敌方势力据点，获取情报或秘籍",
+      "category": "stealth",
+      "durationMonths": 2,
+      "minPartySize": 1,
+      "recommendedPower": 25,
+      "weight": 1,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 180, "reason": "潜入酬劳" },
+        { "type": "alignment_delta", "delta": -3, "reason": "行事不择手段" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -8, "reason": "潜入败露" }
+      ],
+      "factionId": "faction.demon",
+      "eventCardIds": ["night_raid", "master_challenge", "officials"]
+    },
+    {
+      "id": "investigate",
+      "name": "查案缉拿",
+      "description": "受官府委托查明案情，缉拿要犯",
+      "category": "social",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 20,
+      "weight": 1,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 120, "reason": "查案赏金" },
+        { "type": "reputation_delta", "delta": 6, "reason": "协助官府" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -4, "reason": "查案无功" },
+        { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "赔偿损失" }
+      ],
+      "factionId": "faction.government",
+      "eventCardIds": ["officials", "ambush", "wounded_traveler"]
+    },
+    {
+      "id": "gather_intel",
+      "name": "打探消息",
+      "description": "通过丐帮情报网络打探江湖动向",
+      "category": "social",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 8,
+      "weight": 1.5,
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 40, "reason": "情报酬劳" },
+        { "type": "reputation_delta", "delta": 3, "reason": "广积人脉" }
+      ],
+      "failPenalty": [
+        { "type": "morale_delta", "delta": -2, "reason": "无功而返" }
+      ],
+      "factionId": "faction.beggar",
+      "eventCardIds": ["officials", "mutual_aid", "lost"]
+    },
+
+    {
+      "id": "rc_1_patrol",
+      "name": "边境巡逻",
+      "description": "受正道盟委托，巡逻边境要道，探查匪患情况",
+      "category": "reconnaissance",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 15,
+      "factionId": "faction.righteous",
+      "completionFlag": "righteous_c1_done",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 10, "reason": "巡逻有功" },
+        { "type": "faction_relation_delta", "factionId": "faction.righteous", "delta": 5, "reason": "初获信任" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -3, "reason": "巡逻失职" }
+      ],
+      "eventCardIds": ["storm", "ambush", "wounded_traveler"]
+    },
+    {
+      "id": "rc_2_rescue",
+      "name": "营救同道",
+      "description": "正道盟弟子遭匪徒俘虏，出手营救",
+      "category": "combat",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 40,
+      "factionId": "faction.righteous",
+      "unlockCondition": [
+        { "type": "state", "field": "flags.righteous_c1_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "righteous_c2_done",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 20, "reason": "营救成功" },
+        { "type": "faction_relation_delta", "factionId": "faction.righteous", "delta": 10, "reason": "大义之举" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -8, "reason": "营救失败" },
+        { "type": "morale_delta", "delta": -5, "reason": "士气受挫" }
+      ],
+      "eventCardIds": ["ambush", "night_raid", "master_challenge"]
+    },
+    {
+      "id": "rc_3_siege",
+      "name": "攻克匪寨",
+      "description": "联合正道盟精锐，一举攻克藏匿深山的匪徒老巢",
+      "category": "combat",
+      "durationMonths": 3,
+      "minPartySize": 3,
+      "recommendedPower": 70,
+      "factionId": "faction.righteous",
+      "unlockCondition": [
+        { "type": "state", "field": "flags.righteous_c2_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "righteous_c3_done",
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 300, "reason": "剿匪缴获" },
+        { "type": "reputation_delta", "delta": 40, "reason": "攻克匪寨威名大振" },
+        { "type": "faction_relation_delta", "factionId": "faction.righteous", "delta": 15, "reason": "正道功勋" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -15, "reason": "攻寨受挫" },
+        { "type": "morale_delta", "delta": -10, "reason": "惨败士气" }
+      ],
+      "eventCardIds": ["ambush", "night_raid", "storm", "master_challenge"]
+    },
+    {
+      "id": "rc_4_alliance",
+      "name": "正式结盟",
+      "description": "宗门与正道盟举行缔盟仪式，共商江湖大事",
+      "category": "social",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 50,
+      "factionId": "faction.righteous",
+      "unlockCondition": [
+        { "type": "state", "field": "flags.righteous_c3_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "righteous_chain_complete",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 60, "reason": "结盟正道声誉大涨" },
+        { "type": "currency_delta", "key": "silver", "delta": 500, "reason": "盟主赠礼" },
+        { "type": "faction_relation_delta", "factionId": "faction.righteous", "delta": 20, "reason": "正式结盟" },
+        { "type": "alignment_delta", "delta": 15, "reason": "正道之名" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -20, "reason": "结盟破裂声名受损" },
+        { "type": "faction_relation_delta", "factionId": "faction.righteous", "delta": -10, "reason": "失信正道" }
+      ],
+      "eventCardIds": ["officials", "mutual_aid", "merchant"]
+    },
+
+    {
+      "id": "trd_1_survey",
+      "name": "商路勘查",
+      "description": "受商盟委托，探查并记录西域商路沿途地形与匪患分布",
+      "category": "exploration",
+      "durationMonths": 2,
+      "minPartySize": 1,
+      "recommendedPower": 10,
+      "factionId": "faction.merchant",
+      "completionFlag": "merchant_c1_done",
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 80, "reason": "勘查酬劳" },
+        { "type": "faction_relation_delta", "factionId": "faction.merchant", "delta": 5, "reason": "商盟好感" }
+      ],
+      "failPenalty": [
+        { "type": "morale_delta", "delta": -3, "reason": "勘查无功" }
+      ],
+      "eventCardIds": ["lost", "storm", "merchant"]
+    },
+    {
+      "id": "trd_2_caravan",
+      "name": "护卫商队",
+      "description": "依照勘查路线，全程护卫大型商队平安穿越险地",
+      "category": "combat",
+      "durationMonths": 3,
+      "minPartySize": 2,
+      "recommendedPower": 45,
+      "factionId": "faction.merchant",
+      "unlockCondition": [
+        { "type": "state", "field": "flags.merchant_c1_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "merchant_c2_done",
+      "supplyCost": { "food": 5 },
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 350, "reason": "护卫酬金" },
+        { "type": "reputation_delta", "delta": 15, "reason": "护卫有功" },
+        { "type": "faction_relation_delta", "factionId": "faction.merchant", "delta": 10, "reason": "商盟信誉" }
+      ],
+      "failPenalty": [
+        { "type": "currency_delta", "key": "silver", "delta": -100, "reason": "货物损失赔偿" },
+        { "type": "faction_relation_delta", "factionId": "faction.merchant", "delta": -8, "reason": "失信商盟" }
+      ],
+      "eventCardIds": ["ambush", "night_raid", "officials", "merchant"]
+    },
+    {
+      "id": "trd_3_monopoly",
+      "name": "独占要道",
+      "description": "协助商盟清除竞争势力，独占关键商道控制权",
+      "category": "combat",
+      "durationMonths": 3,
+      "minPartySize": 3,
+      "recommendedPower": 80,
+      "factionId": "faction.merchant",
+      "unlockCondition": [
+        { "type": "state", "field": "flags.merchant_c2_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "merchant_chain_complete",
+      "supplyCost": { "food": 10 },
+      "rewards": [
+        { "type": "currency_delta", "key": "silver", "delta": 800, "reason": "商道分红" },
+        { "type": "reputation_delta", "delta": 30, "reason": "商盟盟友" },
+        { "type": "faction_relation_delta", "factionId": "faction.merchant", "delta": 20, "reason": "商盟要员" }
+      ],
+      "failPenalty": [
+        { "type": "currency_delta", "key": "silver", "delta": -200, "reason": "投资损失" },
+        { "type": "faction_relation_delta", "factionId": "faction.merchant", "delta": -15, "reason": "商盟失望" },
+        { "type": "reputation_delta", "delta": -10, "reason": "声名受损" }
+      ],
+      "eventCardIds": ["ambush", "night_raid", "master_challenge", "officials"]
+    },
+
+    {
+      "id": "tc_1_intel",
+      "name": "打探各派底细",
+      "description": "武林大会临近，派遣弟子秘密打探各大门派的实力与动向",
+      "category": "stealth",
+      "durationMonths": 1,
+      "minPartySize": 1,
+      "recommendedPower": 20,
+      "completionFlag": "tourney_c1_done",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 10, "reason": "情报收集有功" },
+        { "type": "currency_delta", "key": "silver", "delta": 30, "reason": "情报酬劳" }
+      ],
+      "failPenalty": [
+        { "type": "morale_delta", "delta": -3, "reason": "情报搜集失败" }
+      ],
+      "eventCardIds": ["officials", "mutual_aid", "lost"]
+    },
+    {
+      "id": "tc_2_recruit",
+      "name": "广纳英才",
+      "description": "依据情报，游历各地招募有潜力的散修或隐士加入大会队伍",
+      "category": "social",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 50,
+      "unlockCondition": [
+        { "type": "state", "field": "flags.tourney_c1_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "tourney_c2_done",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 20, "reason": "广结英豪" },
+        { "type": "morale_delta", "delta": 10, "reason": "人才聚集士气大振" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -5, "reason": "招募失利" }
+      ],
+      "eventCardIds": ["master_challenge", "mutual_aid", "merchant", "wounded_traveler"]
+    },
+    {
+      "id": "tc_3_qualify",
+      "name": "获取参赛资格",
+      "description": "以精锐弟子公开亮相，向武林各派展示实力，正式获得武林大会参赛资格",
+      "category": "combat",
+      "durationMonths": 2,
+      "minPartySize": 2,
+      "recommendedPower": 65,
+      "unlockCondition": [
+        { "type": "state", "field": "flags.tourney_c2_done", "op": "eq", "value": true }
+      ],
+      "completionFlag": "tourney_chain_complete",
+      "rewards": [
+        { "type": "reputation_delta", "delta": 50, "reason": "大会资格声名大振" },
+        { "type": "morale_delta", "delta": 15, "reason": "参赛资格激励" },
+        { "type": "currency_delta", "key": "silver", "delta": 200, "reason": "资格赞助" }
+      ],
+      "failPenalty": [
+        { "type": "reputation_delta", "delta": -20, "reason": "资格落选声名受损" },
+        { "type": "morale_delta", "delta": -10, "reason": "落选士气受挫" }
+      ],
+      "eventCardIds": ["master_challenge", "night_raid", "officials", "windfall"]
+    }
+  ],
+  "eventCards": [
+    {
+      "id": "ambush",
+      "name": "山贼埋伏",
+      "description": "途经险路遭遇山贼伏击",
+      "baseSuccessRate": 0.5,
+      "statCheck": "physique",
+      "successEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": 20, "reason": "击退山贼缴获" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -3, "reason": "遭遇伏击" }
+      ]
+    },
+    {
+      "id": "lost",
+      "name": "迷路",
+      "description": "在山林中迷失方向",
+      "baseSuccessRate": 0.6,
+      "statCheck": "comprehension",
+      "successEffects": [],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -2, "reason": "迷路消耗" }
+      ]
+    },
+    {
+      "id": "wounded_traveler",
+      "name": "路遇伤者",
+      "description": "发现路边受伤的旅人",
+      "baseSuccessRate": 0.7,
+      "statCheck": "willpower",
+      "successEffects": [
+        { "type": "reputation_delta", "delta": 3, "reason": "救助伤者" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -2, "reason": "救助不力" }
+      ]
+    },
+    {
+      "id": "storm",
+      "name": "暴风雨",
+      "description": "突遭暴风雨袭击",
+      "baseSuccessRate": 0.5,
+      "statCheck": "physique",
+      "successEffects": [],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -3, "reason": "风雨侵袭" }
+      ]
+    },
+    {
+      "id": "merchant",
+      "name": "商队相遇",
+      "description": "途中遇到行商队伍",
+      "baseSuccessRate": 0.6,
+      "statCheck": "charisma",
+      "successEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": 30, "reason": "交易获利" }
+      ],
+      "failEffects": []
+    },
+    {
+      "id": "master_challenge",
+      "name": "江湖高手挑战",
+      "description": "被江湖高手拦路挑战",
+      "baseSuccessRate": 0.4,
+      "statCheck": "agility",
+      "successEffects": [
+        { "type": "reputation_delta", "delta": 5, "reason": "击败高手" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -5, "reason": "败于高手" }
+      ]
+    },
+    {
+      "id": "discovery",
+      "name": "发现秘境",
+      "description": "意外发现隐秘之地",
+      "baseSuccessRate": 0.5,
+      "statCheck": "comprehension",
+      "successEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": 40, "reason": "秘境宝藏" },
+        { "type": "reputation_delta", "delta": 3, "reason": "秘境发现" }
+      ],
+      "failEffects": []
+    },
+    {
+      "id": "plague_village",
+      "name": "瘟疫村落",
+      "description": "途经瘟疫蔓延的村落",
+      "baseSuccessRate": 0.5,
+      "statCheck": "willpower",
+      "successEffects": [
+        { "type": "reputation_delta", "delta": 5, "reason": "救济灾民" },
+        { "type": "alignment_delta", "delta": 3, "reason": "行善积德" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -5, "reason": "瘟疫困扰" }
+      ]
+    },
+    {
+      "id": "officials",
+      "name": "官府盘查",
+      "description": "遭遇官府路检盘查",
+      "baseSuccessRate": 0.6,
+      "statCheck": "charisma",
+      "successEffects": [],
+      "failEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": -20, "reason": "官府罚银" }
+      ]
+    },
+    {
+      "id": "windfall",
+      "name": "意外收获",
+      "description": "途中意外获得财物",
+      "baseSuccessRate": 0.3,
+      "successEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": 50, "reason": "意外之财" }
+      ],
+      "failEffects": []
+    },
+    {
+      "id": "mutual_aid",
+      "name": "同门相助",
+      "description": "遇到江湖同道互相帮助",
+      "baseSuccessRate": 0.7,
+      "statCheck": "willpower",
+      "successEffects": [
+        { "type": "morale_delta", "delta": 5, "reason": "同门义气" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -2, "reason": "助人未果" }
+      ]
+    },
+    {
+      "id": "night_raid",
+      "name": "夜袭",
+      "description": "夜间遭遇敌人突袭",
+      "baseSuccessRate": 0.45,
+      "statCheck": "agility",
+      "successEffects": [
+        { "type": "currency_delta", "key": "silver", "delta": 15, "reason": "反击夜袭缴获" },
+        { "type": "reputation_delta", "delta": 2, "reason": "英勇反击" }
+      ],
+      "failEffects": [
+        { "type": "morale_delta", "delta": -4, "reason": "夜袭受损" }
+      ]
+    }
+  ]
+}
